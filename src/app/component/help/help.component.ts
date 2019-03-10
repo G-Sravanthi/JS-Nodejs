@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { MongoDbService } from '../../service/mongoDb.service';
 
 @Component({
   selector: 'app-help',
@@ -11,7 +12,7 @@ import { Subject } from 'rxjs';
 export class HelpComponent implements OnInit {
 
   PaymentForm: FormGroup;
-  constructor(private _formBuilder: FormBuilder, private router: Router) { }
+  constructor(private _formBuilder: FormBuilder, private router: Router,private mongoDbService:MongoDbService) { }
   ngOnInit() {
 
     this.PaymentForm = this._formBuilder.group({
@@ -26,7 +27,7 @@ export class HelpComponent implements OnInit {
  
   onPayment(){
     console.log('on payment');
-    console.log('userForm',this.PaymentForm);
+    this.mongoDbService.submitPaymentForm(this.PaymentForm.value);
   }
 
 }

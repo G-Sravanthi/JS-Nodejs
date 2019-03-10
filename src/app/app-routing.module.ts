@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { FactsComponent } from './facts/facts.component';
-import { HelpComponent } from './help/help.component';
-import { ContactComponent } from './contact/contact.component';
-import { NewsComponent } from './news/news.component';
+import { HomeComponent } from './component/home/home.component';
+import { AboutComponent } from './component/about/about.component';
+import { HelpComponent } from './component/help/help.component';
+import { NewsComponent } from './component/news/news.component';
+import { FactsComponent } from './component/facts/facts.component';
+import { ContactComponent } from './component/contact/contact.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full',component:HomeComponent},
